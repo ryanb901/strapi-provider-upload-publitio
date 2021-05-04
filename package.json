@@ -1,0 +1,26 @@
+{
+  "name": "strapi-provider-upload-publitio",
+  "version": "0.3.4",
+  "description": "Publitio provider for strapi upload",
+  "main": "./lib",
+  "author": "Ryan Boydon",
+  "keywords": [
+    "upload",
+    "publitio",
+    "strapi"
+  ],
+  "license": "MIT",
+  "directories": {
+    "lib": "./lib"
+  },
+  "peerDependencies": {
+    "strapi-plugin-upload": "^3.1.6"
+  },
+  "strapi": {
+    "isProvider": true
+  },
+  "dependencies": {
+    "publitio_js_sdk": "^1.1.4",
+    "streamifier": "^0.1.1"
+  }
+}
