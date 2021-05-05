@@ -20,7 +20,6 @@
     "isProvider": true
   },
   "dependencies": {
-    "into-stream": "^7.0.0",
     "publitio_js_sdk": "^1.1.4"
   }
 }
