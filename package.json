@@ -1,6 +1,6 @@
 {
   "name": "strapi-provider-upload-publitio",
-  "version": "0.3.13",
+  "version": "0.3.14",
   "description": "Publitio provider for strapi upload",
   "main": "./lib",
   "author": "Ryan Boydon",
@@ -20,6 +20,7 @@
     "isProvider": true
   },
   "dependencies": {
+    "into-stream": "^5.1.0",
     "publitio_js_sdk": "^1.1.4"
   }
 }
