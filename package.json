@@ -4,6 +4,11 @@
   "description": "Publitio provider for strapi upload",
   "main": "./lib",
   "author": "Ryan Boydon",
+  "repository": {
+    "url": "https://github.com/ryanb901/strapi-provider-upload-publitio",
+    "type": "git"
+  },
+  "homepage": "https://github.com/ryanb901/strapi-provider-upload-publitio",
   "keywords": [
     "upload",
     "publitio",
