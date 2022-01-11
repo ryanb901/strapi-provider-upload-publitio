@@ -9,7 +9,7 @@ See the [using a provider](https://strapi.io/documentation/developer-docs/latest
 `/config/plugins.js`
 
 ```js
-module.exports = ({ env }) => ({
+module.exports = ({env}) => ({
   upload: {
     provider: "publitio",
     providerOptions: {
@@ -17,6 +17,24 @@ module.exports = ({ env }) => ({
       api_secret: env("PUBLITIO_SECRET"), //REQUIRED
       folder: "FOLDER_NAME",
       folder_id: "Folder ID",
+    },
+  },
+});
+```
+
+If using strapi >= 4.0.0, please use the below config (note V4 now requires providers full package name):
+
+```js
+module.exports = ({env}) => ({
+  upload: {
+    config: {
+      provider: "strapi-provider-upload-publitio",
+      providerOptions: {
+        api_key: env("PUBLITIO_KEY"), //REQUIRED
+        api_secret: env("PUBLITIO_SECRET"), //REQUIRED
+        folder: "FOLDER_NAME",
+        folder_id: "Folder ID",
+      },
     },
   },
 });
