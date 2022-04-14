@@ -8,21 +8,7 @@ See the [using a provider](https://strapi.io/documentation/developer-docs/latest
 
 `/config/plugins.js`
 
-```js
-module.exports = ({env}) => ({
-  upload: {
-    provider: "publitio",
-    providerOptions: {
-      api_key: env("PUBLITIO_KEY"), //REQUIRED
-      api_secret: env("PUBLITIO_SECRET"), //REQUIRED
-      folder: "FOLDER_NAME",
-      folder_id: "Folder ID",
-    },
-  },
-});
-```
-
-If using strapi >= 4.0.0, please use the below config (note V4 now requires providers full package name):
+If using strapi >= 4.0.0, please use the below config (note V3 or earlier only require the provider name as "publitio"):
 
 ```js
 module.exports = ({env}) => ({
@@ -38,6 +24,32 @@ module.exports = ({env}) => ({
     },
   },
 });
+```
+
+Strapi V4 also now requires changing default CSP settings middleware in config/middlewares.js:
+
+```js
+module.exports = ({env}) => [
+  "strapi::errors",
+  {
+    name: "strapi::security",
+    config: {
+      contentSecurityPolicy: {
+        directives: {
+          "script-src": ["'self'", "'unsafe-inline'"],
+          "img-src": ["'self'", "data:", "media.publit.io/file/"],
+        },
+      },
+    },
+  },
+  "strapi::cors",
+  "strapi::poweredBy",
+  "strapi::logger",
+  "strapi::query",
+  "strapi::body",
+  "strapi::favicon",
+  "strapi::public",
+];
 ```
 
 ## Links
